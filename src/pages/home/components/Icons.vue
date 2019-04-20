@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -16,36 +16,20 @@
 <script>
   export default {
     name: 'HomeIcons',
+    props: {
+      list: Array
+    },
     data () {
       return {
-        iconList: [{
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '热门景点'
-        }, {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/81/92b4e30551e83b02.png',
-          desc: '南靖土楼'
-        }, {
-          id: '0003',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-          desc: '漳州必游'
-        }, {
-          id: '0004',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/ab/6f7d6e44963c9302.png',
-          desc: '泡温泉'
-        }, {
-          id: '0005',
-          imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20191/de711920c71e38287d9f95f7910aa1aa.png',
-          desc: '精品小团'
+        swiperOption: {
+          autoplay: false
         }
-        ]
       }
     },
     computed: {
       pages () {
         const pages = []
-        this.iconList.forEach((item, index) => {
+        this.list.forEach((item, index) => {
           const page = Math.floor(index / 8)
           if (!pages[page]) {
             pages[page] = []
@@ -65,8 +49,10 @@
     overflow hidden
     height 0
     padding-bottom 50%
+
   .icons
     margin-top .1rem
+
     .icon
       position relative
       overflow hidden

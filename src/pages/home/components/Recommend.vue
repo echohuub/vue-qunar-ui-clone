@@ -2,7 +2,7 @@
   <div>
     <div class="recommend-title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl"/>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -18,30 +18,8 @@
 <script>
   export default {
     name: 'HomeRecommend',
-    data () {
-      return {
-        recommendList: [{
-          id: '0001',
-          title: '厦门科技馆1',
-          desc: '厦门科技馆厦门科技馆1',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1901/7c/7cb1cca588241d6ba3.img.jpg_200x200_297820fb.jpg'
-        }, {
-          id: '0002',
-          title: '厦门科技馆2',
-          desc: '厦门科技馆厦门科技馆2',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1901/7c/7cb1cca588241d6ba3.img.jpg_200x200_297820fb.jpg'
-        }, {
-          id: '0003',
-          title: '厦门科技馆3',
-          desc: '厦门科技馆厦门科技馆3',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1901/7c/7cb1cca588241d6ba3.img.jpg_200x200_297820fb.jpg'
-        }, {
-          id: '0004',
-          title: '厦门科技馆4',
-          desc: '厦门科技馆厦门科技馆4',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1901/7c/7cb1cca588241d6ba3.img.jpg_200x200_297820fb.jpg'
-        }]
-      }
+    props: {
+      list: Array
     }
   }
 </script>
