@@ -1,4 +1,4 @@
-# travel-vue-clone
+# vue-qunar-ui-clone
 
 > Qunar web app UI clone make using vue.
 
