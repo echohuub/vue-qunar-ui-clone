@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <keep-alive>
+    <!--除了exclude，还可以使用activated，参考Home.vue-->
+    <keep-alive exclude="Detail">
       <router-view/>
     </keep-alive>
   </div>
