@@ -23,7 +23,6 @@
         for (let i in this.cities) {
           letters.push(i)
         }
-        console.log(letters)
         return letters
       }
     },
