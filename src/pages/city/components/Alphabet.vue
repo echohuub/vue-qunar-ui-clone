@@ -1,9 +1,10 @@
 <template>
   <ul class="list">
+    <!--@touchstart.prevent, prevent阻止默认行为，避免拖动的时候整个页面滚动-->
     <li class="item" v-for="item of letters"
         :key="item"
         :ref="item"
-        @touchstart="handleTouchStart"
+        @touchstart.prevent="handleTouchStart"
         @touchmove="handleTouchMove"
         @touchend="handleTouchEnd"
         @click="handleLetterClick">{{item}}
